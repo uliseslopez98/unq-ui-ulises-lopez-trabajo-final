@@ -12,7 +12,7 @@ export default function MenuInicial(){
             <h1 className="saludo">
                 Elije la cantidad de jugadores para comenzar el
                 Piedra, Papel, Tijera, Lagarto, Spock
-                <div> <img src={require("../img/todos4.jpg")}/> </div>
+                <div> <img src={require("../img/todos.jpg")}/> </div>
             </h1>
             <div className= "botones-inicio">
                 <div className="formato-boton"><button type= "button" className= "btn btn-outline-info btn-lg" onClick = {() => unjugador()}><img src={require("../img/unjugador.png")}/> Un Jugador</button></div>
