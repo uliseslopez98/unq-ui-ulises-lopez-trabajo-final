@@ -5,15 +5,13 @@
   grid-template-columns: repeat(2, 300px)
 }
 
-h2{
+h3{
   color: gray;
 }
 
-h3{
+h4{
   color: lightgrey;
 }
-
-
 
 .formato-boton{
   padding-right: 20px;

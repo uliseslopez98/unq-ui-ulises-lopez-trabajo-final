@@ -6,8 +6,6 @@ import MenuInicial from './Base/MenuInicial'
 import UnJugador from './Base/UnJugador'
 import DosJugadores from './Base/DosJugadores'
 
-
-
 function App() {
   return (
     <div>
