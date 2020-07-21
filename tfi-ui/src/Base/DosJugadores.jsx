@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router';
 import Juego from './Juego';
 import Opciones from './Opciones';
 import Seleccion from './Seleccion';
 import Puntuacion from './Puntuacion';
+import Barra from './Barra';
 
 
-const UnJugador = () => {
+const DosJugadores = () => {
     const [seleccionJ1, establecerSeleccionJ1] = useState(null);
     const [seleccionJ2, establecerSeleccionJ2] = useState(null);
     const [puntosJ1, establecerPuntosJ1] = useState(0);
@@ -16,9 +16,6 @@ const UnJugador = () => {
     const [texto, establecerTexto] = useState("");
     const [colorGanador, establecerColorGanador] = useState("");
     const [infoGanador, establecerInfoGanador] = useState(false);
-    const history = useHistory();
-    const unjugador = () => history.push('/unjugador');
-    const dosjugadores = () => history.push('/dosjugadores');
 
 
     const combate = () => {
@@ -44,12 +41,18 @@ const UnJugador = () => {
         establecerInfoGanador(true);
     }
 
-    const reiniciarJuego = () => {
+    const siguientePartida = () => {
         establecerSeleccionJ1(null);
         establecerSeleccionJ2(null);
         establecerSeleccionados(false);
         establecerTipoBoton(null);
         establecerInfoGanador(false);
+    }
+
+    const reiniciarContador = () => {
+        establecerPuntosJ1(0);
+        establecerPuntosJ2(0);
+        Juego.reiniciarContador();
     }
 
     const  alAzar = () => {
@@ -72,12 +75,7 @@ const UnJugador = () => {
 
     return(
         <>
-        <nav className="navbar navbar-dark">
-            <div className="navbar-brand btn btn-outline-dark" onClick={unjugador}>
-            <img src='logo1j.png'/> </div>
-            <div className="navbar-brand btn btn-outline-dark" onClick={dosjugadores}>
-            <img src='logo2j.png'/> </div>
-        </nav>
+        <Barra reiniciar={reiniciarContador}/>
         <div>
             {lasOpciones() &&
             <Opciones eleccion={seleccionamientoJ1} colorJ='info'/>}
@@ -92,9 +90,9 @@ const UnJugador = () => {
             {infoGanador && <h2 className= {"alert alert-" + colorGanador +" text-center"}>{texto}</h2>}
             </>
         <Puntuacion puntosJ1={puntosJ1} combate={combate} tipoBoton={tipoBoton}
-                    puntosJ2={puntosJ2} reiniciarJuego={reiniciarJuego} contraM={false}/>
+                    puntosJ2={puntosJ2} siguientePartida={siguientePartida} contraM={false}/>
         </>
     );
 }
 
-export default UnJugador;
+export default DosJugadores;

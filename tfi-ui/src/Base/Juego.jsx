@@ -118,4 +118,4 @@ const reglasSpock = () => {
 };
 
 
-export default { Juego };
+export default { Juego, reiniciarContador };
