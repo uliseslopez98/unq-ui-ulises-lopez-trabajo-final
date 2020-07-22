@@ -55,15 +55,9 @@ const UnJugador = () => {
         Juego.reiniciarContador();
     }
 
-    const  alAzar = () => {
-        const opciones = ["piedra", "papel", "tijera", "lagarto", "spock"];
-        const eleccion = Math.floor(Math.random() * (opciones.length));
-        return opciones[eleccion];
-    }
-
     const seleccionamiento = (decision) => {
         establecerSeleccionJ1(decision);
-        establecerSeleccionM(alAzar());
+        establecerSeleccionM(Juego.alAzar());
         establecerTipoBoton('combatir');
     }
 

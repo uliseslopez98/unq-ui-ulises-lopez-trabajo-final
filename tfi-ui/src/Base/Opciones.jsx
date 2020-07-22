@@ -1,8 +1,11 @@
 import React from 'react';
+import Juego from './Juego';
 
 const Opciones = ({eleccion, colorJ}) => {
 
     const claseOpcion = `btn btn-outline-${colorJ}`
+
+    const incognito = Juego.alAzar();
 
     return (
         <div className="text-center">
@@ -30,6 +33,11 @@ const Opciones = ({eleccion, colorJ}) => {
             <div className={claseOpcion}
                     onClick={() => eleccion("spock")}>
                 <img src='spock.jpg' alt='spock' />
+            </div>
+
+            <div className={claseOpcion}
+                    onClick={() => eleccion(incognito)}>
+                <img src='secreto.jpg' alt='secreto' />
             </div>
 
         </div>

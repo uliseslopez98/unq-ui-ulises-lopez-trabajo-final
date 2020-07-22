@@ -12,6 +12,7 @@ const Seleccion = ({seleccionJ1, seleccionJ2, seleccionados, contraM}) => {
                     <h3> Eleccion {primerJugador} :
                     {contraM && <img src={seleccionJ1 ? `${seleccionJ1}.jpg` : 'secreto1.png'}/>}
                     {!contraM && <img src={seleccionJ1 && seleccionados ? `${seleccionJ1}.jpg` : 'secreto1.png'}/>}
+                    {!contraM && <img src={seleccionJ1 && !seleccionados ? `confirmacion.png` : ''}/>}
                     </h3>
                 </div>
             </div>
@@ -19,6 +20,7 @@ const Seleccion = ({seleccionJ1, seleccionJ2, seleccionados, contraM}) => {
                 <div className="text-center text-dark">
                     <h3> Eleccion {segundoJugador} :
                     <img src={seleccionJ2 && seleccionados ? `${seleccionJ2}.jpg` : 'secreto2.png'}/>
+                    <img src={seleccionJ2 && !seleccionados ? `confirmacion.png` : ''}/>
                     </h3>
                 </div>
             </div>

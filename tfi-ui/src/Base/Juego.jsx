@@ -117,5 +117,11 @@ const reglasSpock = () => {
     }
 };
 
+const  alAzar = () => {
+    const opciones = ["piedra", "papel", "tijera", "lagarto", "spock"];
+    const eleccion = Math.floor(Math.random() * (opciones.length));
+    return opciones[eleccion];
+}
 
-export default { Juego, reiniciarContador };
+
+export default { Juego, reiniciarContador, alAzar };

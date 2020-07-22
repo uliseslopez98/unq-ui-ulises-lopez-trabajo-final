@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap'
 export default function ModalMoreInfo({cerrarVentana, ventana}) {
     return(
         <>
-        <div modal-dialog-centered>
+        <div modal-dialog-centered >
         <Modal show={ventana} size="lg">
 
             <Modal.Header >
